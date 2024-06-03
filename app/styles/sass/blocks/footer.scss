@@ -1,0 +1,115 @@
+.footer {
+  padding: 3rem 0;
+  color: #4E4E4E;
+	&__inner {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2rem;
+  }
+  &__logo {
+    display: inline-block;
+    width: 20rem;
+    margin-bottom: 5rem;
+  }
+  &__logo-title {
+
+  }
+  &__col--last {
+    text-align: right;
+  }
+  &__tel {
+    display: block;
+    font-weight: 500;
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+  }
+  &__email {
+    display: block;
+    margin-bottom: 3rem;
+  }
+  &__socs {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 4rem;
+  }
+  &__soc {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    margin-left: 2.8rem;
+    @include img-contain;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+  }
+  &__link {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 2.2rem;
+  }
+  &__mob {
+    display: none;
+  }
+  @media (max-width: 48em) {
+    padding: 3rem 0;
+    color: #4E4E4E;
+    &__inner {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+    }
+    &__col--first {
+      grid-column: 1/3;
+    }
+    &__logo {
+      display: inline-block;
+      width: 20rem;
+      margin-bottom: 5rem;
+    }
+    &__mob {
+      display: block;
+    }
+    &__col--last {
+      display: none;
+    }
+    &__tel {
+      display: block;
+      font-weight: 500;
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+    }
+    &__email {
+      display: block;
+      margin-bottom: 3rem;
+    }
+    &__socs {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 4rem;
+    }
+    &__soc {
+      display: inline-block;
+      width: 5rem;
+      height: 5rem;
+      margin-left: 0;
+      margin-right: 2rem;
+      @include img-contain;
+    }
+    &__title {
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: #000;
+      text-transform: uppercase;
+      margin-bottom: 6rem;
+    }
+    &__link {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 2.2rem;
+    }
+  }
+}

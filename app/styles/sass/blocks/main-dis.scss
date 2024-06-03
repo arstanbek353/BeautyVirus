@@ -1,0 +1,212 @@
+.main-dis {
+  padding: 8rem 0;
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__mtitle {
+    width: 100%;
+  }
+  &__left {
+    width: 68.3rem;
+    .main-dis__slide {
+      height: 26.8rem;
+      margin-bottom: 3rem;
+      background: linear-gradient(90deg, #E6E5E3 0%, rgba($color: #E6E5E3, $alpha: 0) 100%);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__btn {
+    padding: 1.2rem 4.6rem;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  &__right {
+    width: 68.3rem;
+    .main-dis__title {
+      font-size: 3.8rem;
+
+    }
+    .main-dis__description {
+      margin-bottom: 4rem;
+    }
+    .main-dis__content {
+      width: 43rem;
+    }
+  }
+	&__slide {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    width: 100%;
+    height: 56.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__content {
+    width: 38rem;
+    padding: 2.8rem;
+    position: relative;
+    z-index: 2;
+  }
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-position: right center;
+    @include img-cover;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 3.3rem;
+    margin-bottom: 2rem;
+  }
+  &__description {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+  }
+  &__tag {
+    position: absolute;
+    top: 4.8rem;
+    left: 3.2rem;
+    color: #717171;
+    z-index: 3;
+  }
+  &__controllers {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2rem 2.8rem;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__pag {
+    display: flex;
+    align-items: center;
+    .bullet {
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 100%;
+      opacity: 0.3;
+      background-color: #fff;
+      margin-right: 0.7rem;
+      &.active {
+        width: 1rem;
+        height: 1rem;
+        opacity: 1;
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+  &__prev,
+  &__next {
+    margin-left: 1.3rem;
+    width: 4.7rem;
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+  @media (max-width: 48em) {
+    padding: 7rem 0;
+    &__inner {
+      display: block;
+    }
+    &__mtitle {
+      width: 100%;
+    }
+    &__left {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      .main-dis__slide {
+        align-items: center;
+        height: 15.6rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    &__btn {
+      display: none;
+    }
+    &__right {
+      width: 100%;
+      .main-dis__title {
+        font-size: 2.2rem;
+        padding-top: 4rem;
+      }
+      .main-dis__description {
+        margin-bottom: 0rem;
+        padding-bottom: 5rem;
+      }
+      .main-dis__content {
+        width: 25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+    &__slide {
+      height: 34.5rem;
+      align-items: stretch;
+    }
+    &__content {
+      width: 25rem;
+      padding: 1.5rem;
+    }
+    &__img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-position: right center;
+      @include img-cover;
+    }
+    &__title {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    &__description {
+      font-size: 1.2rem;
+      margin-bottom: 0;
+    }
+    &__tag {
+      font-size: 1.2rem;
+      top: 3rem;
+      left: 1.5rem;
+    }
+    &__controllers {
+      padding: 1rem 1.5rem;
+      z-index: 5;
+    }
+    &__pag {
+      .bullet {
+        width: 0.3rem;
+        height: 0.3rem;
+        margin-right: 0.4rem;
+        &.active {
+          width: 0.6rem;
+          height: 0.6rem;
+        }
+      }
+    }
+    &__prev,
+    &__next {
+      margin-left: 0.7rem;
+      width: 4rem;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.main-banner {
+  position: relative;
+  .swiper-slide {
+    background: linear-gradient(180deg, #98BCCE 0%, #A8C8D6 70%, #E9E9E9 70%, #E9E9E9 100%);
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    min-height: 82.4rem;
+  }
+  &__left {
+    width: 53.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    flex-shrink: 0;
+    padding-bottom: 10rem;
+  }
+  &__title {
+    font-size: 5.4rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 1.7rem;
+  }
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 5.6rem;
+  }
+  &__img {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 4rem;
+    img {
+      transform: scale(1.5);
+    }
+  }
+  &__controllers {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 50;
+    padding-bottom: 6rem;
+    .container {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__pag {
+    margin-right: 7rem;
+    width: auto;
+    color: rgba($color: #16166C, $alpha: 0.6);
+    font-weight: 500;
+    font-size: 1.8rem;
+    .swiper-pagination-current {
+      color: #16166C;
+      font-size: 3rem;
+    }
+  }
+  &__prev,
+  &__next {
+    margin-right: 1.7rem;
+    width: 6rem;
+  }
+  @media (max-width: 48em) {
+    position: relative;
+    .swiper-slide {
+    }
+    &__inner {
+      padding-top: 14.8rem;
+      display: block;
+      padding-bottom: 7rem;
+      min-height: auto;
+    }
+    &__left {
+      width: 100%;
+      padding-bottom: 6rem;
+    }
+    &__title {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    &__text {
+      font-size: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+    &__img {
+      width: 100%;
+      position: relative;
+      left: -3.5rem;
+      img {
+        transform: scale(1.5);
+      }
+    }
+    &__controllers {
+      padding-bottom: 2.7rem;
+      .container {
+        justify-content: space-between;
+      }
+    }
+    &__pag {
+      margin-right: 0;
+    }
+    &__prev,
+    &__next {
+      margin-right: 0;
+      margin-left: 1rem;
+      width: 5.2rem;
+    }
+  }
+}
