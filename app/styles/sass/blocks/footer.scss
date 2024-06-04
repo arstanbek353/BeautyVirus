@@ -5,6 +5,11 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 2rem;
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
   &__logo {
     display: inline-block;

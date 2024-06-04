@@ -120,6 +120,9 @@
     &.disabled {
       opacity: 0.5;
     }
+    img {
+      @include hover-slider-btn;
+    }
   }
   @media (max-width: 48em) {
     padding: 7rem 0;

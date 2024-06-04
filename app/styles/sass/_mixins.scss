@@ -12,3 +12,10 @@
         object-fit: contain;
     }
 }
+@mixin hover-slider-btn {
+    transform: scale(1);
+    transition: transform 300ms;
+    &:hover {
+      transform: scale(1.2);
+    }
+}

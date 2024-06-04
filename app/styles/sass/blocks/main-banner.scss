@@ -64,6 +64,7 @@
   &__next {
     margin-right: 1.7rem;
     width: 6rem;
+    @include hover-slider-btn;
   }
   @media (max-width: 48em) {
     position: relative;

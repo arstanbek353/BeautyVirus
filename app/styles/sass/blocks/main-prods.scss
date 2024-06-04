@@ -21,6 +21,9 @@
     border-radius: 1.5rem;
     margin-bottom: 1.5rem;
     @include img-cover;
+    img {
+      @include hover-slider-btn;
+    }
   }
   &__ml {
     font-weight: 600;
@@ -52,6 +55,9 @@
     width: 3.5rem;
     &.disabled {
       opacity: 0.5;
+    }
+    img {
+      @include hover-slider-btn;
     }
   }
   @media (max-width: 48em) {

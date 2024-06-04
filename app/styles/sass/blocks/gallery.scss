@@ -33,6 +33,7 @@
     margin-bottom: 2rem;
   }
   &__img {
+    display: block;
     flex-shrink: 0;
     width: 17.5rem;
     height: 17.5rem;
@@ -40,6 +41,9 @@
     overflow: hidden;
     margin-right: 2.8rem;
     @include img-cover;
+    img {
+      @include hover-slider-btn;
+    }
   }
   &__subtitle {
     font-weight: 500;
