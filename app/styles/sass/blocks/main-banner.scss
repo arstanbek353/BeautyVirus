@@ -2,6 +2,11 @@
   position: relative;
   .swiper-slide {
     background: linear-gradient(180deg, #98BCCE 0%, #A8C8D6 70%, #E9E9E9 70%, #E9E9E9 100%);
+    
+  }
+  .container {
+    position: relative;
+    z-index: 2;
   }
   &__inner {
     display: flex;
@@ -29,12 +34,19 @@
     margin-bottom: 5.6rem;
   }
   &__img {
-    flex-grow: 1;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 4rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
     img {
-      transform: scale(1.5);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      &:nth-child(2) {
+        display: none;
+      }
     }
   }
   &__controllers {
@@ -73,7 +85,7 @@
     &__inner {
       padding-top: 14.8rem;
       display: block;
-      padding-bottom: 7rem;
+      padding-bottom: 32rem;
       min-height: auto;
     }
     &__left {
@@ -89,11 +101,13 @@
       margin-bottom: 3.5rem;
     }
     &__img {
-      width: 100%;
-      position: relative;
-      left: -3.5rem;
       img {
-        transform: scale(1.5);
+        &:nth-child(1) {
+          display: none;
+        }
+        &:nth-child(2) {
+          display: block;
+        }
       }
     }
     &__controllers {
