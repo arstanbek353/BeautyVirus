@@ -1,0 +1,188 @@
+.plans {
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  &__container {
+    position: relative;
+    z-index: 3;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__mtitle {
+    margin-bottom: 6rem;
+    &--mob {
+      display: none;
+    }
+  }
+  &__item {
+    filter: drop-shadow(11px 11px 34.1px rgba(169, 126, 15, 0.10));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32.8rem;
+    min-height: 24.7rem;
+    padding: 3rem 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(../images/dist/plan-arrow-bg.svg);
+  }
+  &__icon {
+    width: 7.4rem;
+    height: 7.4rem;
+    border-radius: 100%;
+    background-color: #fff;
+    margin-bottom: 2.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(3px 4px 13.1px rgba(105, 77, 5, 0.25));
+    img {
+      width: 4.6rem;
+      height: 4.6rem;
+      object-fit: contain;
+    }
+  }
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  &__line {
+    margin-top: 1.8rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    svg {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+  &__points {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__point {
+    position: absolute;
+    bottom: -6.5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      content: "";
+      display: block;
+      width: 3.6rem;
+      height: 3.6rem;
+      border-radius: 100%;
+      border: 1px solid #F3D586;
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 100%;
+      background-color: #CA9818;
+    }
+  }
+  @media (max-width: 48em) {
+    padding: 4rem 1rem 3rem 0.5rem;
+    &__inner {
+      display: block;
+    }
+    .container {
+      padding: 0;
+      margin: 0;
+    }
+    &__container {
+      width: calc(100% - 2.6rem);
+    }
+    &__mtitle {
+      margin-bottom: 6rem;
+      &--mob {
+        display: block;
+      }
+      &--desk {
+        display: none;
+      }
+    }
+    &__wrap {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+    &__item {
+      filter: drop-shadow(11px 11px 34.1px rgba(169, 126, 15, 0.10));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      min-height: auto;
+      padding: 1.6rem 4rem;
+      background-size: 100% 100%;
+      background-image: url(../images/dist/plan-arrow-bg2.svg);
+      margin-bottom: 1.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__icon {
+      width: 5rem;
+      height: 5rem;
+      margin-bottom: 1rem;
+      img {
+        width: 3.1rem;
+        height: 3.1rem;
+      }
+    }
+    &__title {
+      font-size: 1.4rem;
+    }
+    &__line {
+      width: 1rem;
+      left: 0.9rem;
+      margin-top: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    &__line-svg {
+      width: 100%;
+      position: absolute;
+      top: 42%;
+      left: 0;
+      transform: translateY(-50%);
+      svg {
+        &:first-child {
+          display: none;
+        }
+        &:last-child {
+          display: block;
+        }
+      }
+    }
+    &__points {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__point {
+      bottom: 50%;
+      left: -0.7rem;
+      transform: translate(-100%, 50%);
+      &::before {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+      &::after {
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+    }
+  }
+}

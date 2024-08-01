@@ -1,0 +1,203 @@
+.main-dis2 {
+  padding: 5rem 0;
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__mtitle {
+    text-align: center;
+    width: 111.1rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    span {
+      color: #CA9818;
+    }
+  }
+  &__subtitle {
+    font-size: 2rem;
+    text-align: center;
+    width: 84rem;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+  }
+  &__btn {
+    padding: 1.2rem 4.6rem;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  &__left,
+  &__right {
+    width: calc(50% - 1.6rem);
+  }
+	&__slide {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    width: 100%;
+    height: 56.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__content {
+    width: 43rem;
+    padding: 2.8rem;
+    position: relative;
+    z-index: 2;
+  }
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-position: right center;
+    @include img-cover;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 3.8rem;
+    margin-bottom: 2rem;
+  }
+  &__description {
+    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+  }
+  &__tag {
+    position: absolute;
+    top: 4.8rem;
+    left: 3.2rem;
+    color: #717171;
+    z-index: 3;
+  }
+  &__controllers {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2rem 2.8rem;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__pag {
+    display: flex;
+    align-items: center;
+    .bullet {
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 100%;
+      opacity: 0.3;
+      background-color: #fff;
+      margin-right: 0.7rem;
+      &.active {
+        width: 1rem;
+        height: 1rem;
+        opacity: 1;
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+  &__prev,
+  &__next {
+    margin-left: 1.3rem;
+    width: 4.7rem;
+    &.disabled {
+      opacity: 0.5;
+    }
+    img {
+      @include hover-slider-btn;
+    }
+  }
+  @media (max-width: 48em) {
+    padding: 7rem 0;
+    &__inner {
+      display: block;
+    }
+    &__mtitle {
+      text-align: left;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    &__subtitle {
+      font-size: 1.4rem;
+      text-align: left;
+      width: 100%;
+      margin-bottom: 4rem;
+    }
+    &__btn {
+      display: none;
+    }
+    &__left {
+      margin-bottom: 1.5rem;
+    }
+    &__left,
+    &__right {
+      width: 100%;
+    }
+    &__slide {
+      height: 34.5rem;
+      align-items: stretch;
+    }
+    &__content {
+      width: 25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.5rem;
+    }
+    &__img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-position: right center;
+      @include img-cover;
+    }
+    &__title {
+      font-size: 2.2rem;
+      padding-top: 4rem;
+      margin-bottom: 1rem;
+    }
+    &__description {
+      margin-bottom: 0rem;
+      padding-bottom: 5rem;
+      font-size: 1.2rem;
+      margin-bottom: 0;
+    }
+    &__tag {
+      font-size: 1.2rem;
+      top: 3rem;
+      left: 1.5rem;
+    }
+    &__controllers {
+      padding: 1rem 1.5rem;
+      z-index: 5;
+    }
+    &__pag {
+      .bullet {
+        width: 0.3rem;
+        height: 0.3rem;
+        margin-right: 0.4rem;
+        &.active {
+          width: 0.6rem;
+          height: 0.6rem;
+        }
+      }
+    }
+    &__prev,
+    &__next {
+      margin-left: 0.7rem;
+      width: 4rem;
+    }
+  }
+}
