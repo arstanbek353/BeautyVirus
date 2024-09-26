@@ -1,0 +1,202 @@
+.buy {
+  padding-top: 21.3rem;
+  margin-bottom: 12rem;
+  &__head {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 4.6rem;
+  }
+  &__mtitle {
+    font-size: 5.4rem;
+    font-weight: 600;
+  }
+  &__text {
+    font-size: 2.2rem;
+    max-width: 52.4rem;
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+  }
+  &__item {
+    display: block;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    min-height: 22.5rem;
+  }
+  @media (max-width: 48em) {
+    padding-top: 10rem;
+    margin-bottom: 7rem;
+    &__head {
+      display: block;
+      margin-bottom: 3rem;
+    }
+    &__mtitle {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    &__text {
+      font-size: 1.5rem;
+      max-width: 100%;
+    }
+    &__inner {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1.1rem;
+    }
+    &__item {
+      border-radius: 0.8rem;
+      min-height: 14.3rem;
+    }
+  }
+}
+
+.address {
+  margin-bottom: 12rem;
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+  &__mtitle {
+    font-size: 5.4rem;
+    font-weight: 600;
+  }
+  &__search {
+    position: relative;
+    font-family: Montserrat;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 600;
+    input {
+      padding: 2rem 7.4rem;
+      background-image: url(../images/dist/address-fly.svg), url(../images/dist/select-arrow.svg);
+      background-position: left 2.5rem center, right 2rem center;
+      background-size: 3.4rem auto, 2.8rem auto;
+      background-repeat: no-repeat;color: #FAB355;
+      width: 40rem;
+      height: 6.6rem;
+      padding: 2rem 7.4rem;
+      border: none;
+      background-color: transparent;
+      z-index: 5;
+      border: 0.1rem solid #B4B4B4;
+      border-radius: 1.5rem;
+        background-color: #fff;
+      &:focus {
+        border-bottom: 0;
+        border-radius: 1.5rem 1.5rem 0 0;
+      }
+    }
+  }
+  &__select {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 40rem;
+    overflow: auto;
+    background-color: #fff;
+    border: 0.1rem solid #B4B4B4;
+    border-radius: 0 0 1.5rem 1.5rem;
+    color: #000;
+    font-size: 2rem;
+    display: none;
+    &.open {
+      display: block;
+    }
+    div {
+      padding: 1rem 2rem;
+      cursor: pointer;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+  &__item {
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    &.hide {
+      display: none;
+    }
+  }
+  &__title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    min-height: 11.4rem;
+  }
+  &__address {
+    font-size: 2rem;
+    padding-left: 2.7rem;
+    background-image: url(../images/dist/address-marker.svg);
+    background-position: left top;
+    background-size: 1.8rem auto;
+    background-repeat: no-repeat;
+  }
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    
+    button {
+      padding: 1rem 1.5rem;
+      background-color: #fff;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      &[disabled] {
+        background-color: #fab355;
+        color: #fff;
+      }
+    }
+  }
+  @media (max-width: 48em) {
+    margin-bottom: 12rem;
+    &__head {
+      display: block;
+      margin-bottom: 4rem;
+    }
+    &__mtitle {
+      font-size: 2.8rem;
+      margin-bottom: 2.5rem;
+    }
+    &__search {
+      input {
+        height: 5.3rem;
+        padding: 2rem 5rem;
+        background-position: left 1rem center, right 1rem center;
+        background-size: 3rem auto, 1.8rem auto;
+        font-size: 2rem;
+        min-width: auto;
+        width: 100%;
+      }
+    }
+    &__select {
+      font-size: 1.6rem;
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 2rem;
+    }
+    &__item {
+      padding: 2rem 1.5rem;
+    }
+    &__title {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      min-height: auto;
+    }
+    &__address {
+      font-size: 1.5rem;
+      padding-left: 3.3rem;
+    }
+  }
+}

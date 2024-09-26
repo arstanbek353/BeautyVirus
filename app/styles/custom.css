@@ -1,0 +1,141 @@
+
+.my-container {
+  padding: 50px 15px;
+}
+
+.my-container .e-con-inner {
+  position: relative;
+  display: flex;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #F6F6F6 40.27%, rgba(246, 246, 246, 0.00) 43.95%), url(<path-to-image>) lightgray 596.552px -29.826px / 65.855% 109.56% no-repeat;
+  box-shadow: 0px 4px 49.2px 0px rgba(120, 134, 255, 0.10);
+  overflow: hidden;
+}
+
+.my-container-inner,
+.my-container-inner-right {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  padding: 10px 55px;
+  width: calc(50% + 100px);
+}
+
+.my-container-inner-right {
+  right: 0;
+  left: auto;
+}
+
+.my-title .elementor-heading-title.elementor-size-default {
+  color: #000;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 83.529%;
+}
+
+.my-img-pc {
+  display: block;
+}
+
+.my-img-sp {
+  display: none;
+}
+
+.my-btn .elementor-button-content-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 295.833%;
+  padding: 0;
+}
+
+.my-btn2 {
+  margin-bottom: 15px;
+}
+
+.my-btn2 .elementor-button-content-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
+  padding: 13px 20px;
+  border-radius: 14px;
+  background: #9CE500;
+}
+
+.my-btn, .elementor-button,
+.my-btn2, .elementor-button {
+  padding: 0;
+}
+
+@media (max-width: 48em) {
+  .my-container {
+    padding: 25px 15px;
+  }
+  .my-container .e-con-inner {
+    border-radius: 20px;
+  }
+  
+  .my-container-inner,
+  .my-container-inner-right {
+    padding: 50px 10px;
+    top: 0;
+    transform: translateY(0%);
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+
+  .my-container-inner-right {
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+
+  .my-container-inner-bottom {
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+
+  .my-title .elementor-heading-title.elementor-size-default {
+    font-size: 42px;
+  }
+  
+  .my-img-pc {
+    display: none;
+  }
+  
+  .my-img-sp {
+    display: block;
+  }
+  
+  .my-btn .elementor-button-content-wrapper {
+    font-size: 14px;
+  }
+  
+  .my-btn2 .elementor-button-content-wrapper {
+    font-size: 13px;
+    padding: 8px 20px;
+  }
+
+  .my-btn, .elementor-button,
+  .my-btn2, .elementor-button {
+    padding: 0;
+  }
+}

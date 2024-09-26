@@ -78,9 +78,15 @@
     width: 6rem;
     @include hover-slider-btn;
   }
+  &--4 {
+    .main-banner__left {
+      padding-bottom: 25rem;
+    }
+  }
   @media (max-width: 48em) {
     position: relative;
     .swiper-slide {
+      height: auto;
     }
     &__inner {
       padding-top: 14.8rem;
@@ -124,6 +130,11 @@
       margin-right: 0;
       margin-left: 1rem;
       width: 5.2rem;
+    }
+    &--4 {
+      .main-banner__left {
+        padding-bottom: 6rem;
+      }
     }
   }
 }

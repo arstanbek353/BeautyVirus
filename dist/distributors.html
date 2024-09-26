@@ -35,7 +35,9 @@
             <img src="images/dist/logo.svg" alt="logo">
           </a>
           <nav class="header__nav">
-            <div class="header__nav-title">Menu</div>
+            <div class="header__nav-title">Menu 
+              <button class="header__close"><img src="images/dist/x-btn.svg" alt=""></button>
+            </div>
             <div class="header__nav-list">
               <a href="/business.html" class="header__links">Акции</a>
               <a href="/resources.html" class="header__links">Новинки</a>
@@ -173,29 +175,71 @@
     </div>
 </div>
 </div>
-<div class="support wow fadeInUp">
-  <div class="container">
-    <div class="support__mtitle">Поддержка продукта <br>
-      и партнерские программы</div>
-    <div class="support__inner">
-      <div class="support__item support__item--black">
-        <div class="support__title">Дистрибьюторам</div>
-        <ul>
-          <li>закрепление территорий</li>
-          <li>обучение и мотивация персонала</li>
-          <li>рекламная поддержка в регионах</li>
-          <li>реклама у блогеров</li>
-        </ul>
+<div class="contact-form wow fadeInUp">
+      <div class="contact-form__rose">
+        <img src="images/dist/form-rose.png" alt="">
       </div>
-      <div class="support__item support__item--yollow">
-        <div class="support__title">Ритейлерам</div>
-        <ul>
-          <li>промо-акции</li>
-          <li>внешний рекламный трафик</li>
-          <li>рекламная поддержка в регионах</li>
-          <li>реклама у блогеров</li>
-          <li>пробники и рекламные материалы</li>
-        </ul>
+  <div class="container">
+    <div class="contact-form__inner">
+      <div class="contact-form__left wow fadeIn">
+        <form class="form" id="contactForm">
+          <div class="form__title">Подпишись на рассылку и получи промокод на скидку 10% на OZON</div>
+          <div class="form__inner">
+            <div class="form__item">
+              <select name="subject" id="subject" class="form__select" required>
+                <option value="1">- По вопросам оптовых закупок</option>
+                <option value="2">- Для лейбла</option>
+                <option value="3">- Для блогеров</option>
+              </select>
+            </div>
+            <div class="form__item">
+              <input type="text" name="name" class="form__input" placeholder="Имя" required>
+            </div>
+            <div class="form__item">
+              <input type="email" name="email" class="form__input" placeholder="E-mail" required>
+            </div>
+            <div class="form__item">
+              <input type="tel" name="tel" class="form__input" placeholder="Телефон" required>
+            </div>
+            <div class="form__item">
+              <textarea name="message" id="message" class="form__textarea" placeholder="Сообщение" required></textarea>
+            </div>
+          </div>
+          <div class="form__actions" style="display: flex; flex-direction: column; align-items: center;">
+            <button class="btn form__send">Отправить</button>
+            <div id="formMessage"></div>
+          </div>
+        </form>
+        <script>
+          $(document).ready(function () {
+            $('#contactForm').on('submit', function (event) {
+              event.preventDefault(); // Отключаем стандартное поведение формы
+
+              // Собираем данные формы
+              var formData = $(this).serialize();
+
+              // Отправляем данные через AJAX
+              $.ajax({
+                url: 'send_mail2.php', // Путь к PHP-скрипту
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                  // Отображаем сообщение об успешной отправке
+                  $('#formMessage').html('<p>' + response + '</p>');
+                  // Очищаем форму после отправки
+                  $('#contactForm')[0].reset();
+                },
+                error: function (xhr, status, error) {
+                  // Обрабатываем ошибки
+                  $('#formMessage').html('<p>Произошла ошибка: ' + error + '</p>');
+                }
+              });
+            });
+          });
+        </script>
+      </div>
+      <div class="contact-form__right wow fadeInRight">
+        <img src="images/dist/form-bg.jpg" alt="">
       </div>
     </div>
   </div>

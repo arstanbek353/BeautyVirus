@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>BeautyVirus</title>
+	<meta name="description" content="BeautyVirus">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="images/favicon.png">
+	<!-- <meta property="og:image" content="images/dist/preview.jpg"> -->
+	
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="css/app.min.css">
+  <script src="https://unpkg.com/@googlemaps/markerclusterer@2.0.15/dist/index.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="js/jquery-3.6.4.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="root">
+    <header class="header wow fadeIn">
+      <div class="container">
+        <div class="header__inner">
+          <a href="/" class="header__logo">
+            <img src="images/dist/logo.svg" alt="logo">
+          </a>
+          <nav class="header__nav">
+            <div class="header__nav-title">Menu 
+              <button class="header__close"><img src="images/dist/x-btn.svg" alt=""></button>
+            </div>
+            <div class="header__nav-list">
+              <a href="/business.html" class="header__links">Акции</a>
+              <a href="/resources.html" class="header__links">Новинки</a>
+              <a href="/company.html" class="header__links">Хиты продаж</a>
+              <a href="/buyers.html" class="header__links">Для покупателей</a>
+              <a href="/distributors.html" class="header__links">Для дистрибьюторов</a>
+            </div>
+          </nav>
+          <div class="header__controlls">
+            <a href="/" class="header__icon only-pc">
+              <img src="images/dist/whatsapp.svg" alt="">
+            </a>
+            <a href="/" class="header__icon only-pc">
+              <img src="images/dist/telegram.svg" alt="">
+            </a>
+            <a href="/" class="header__icon">
+              <img src="images/dist/cart.svg" alt="">
+            </a>
+            <span class="header__burger">
+              <img src="images/dist/burger.svg" alt="">
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<div class="contact">
+  <div class="container">
+    <div class="contact__inner">
+      <div class="contact__mtitle">Свяжитесь с нами любым <br>удобным для вас способом</div>
+      <div class="contact__list">
+        <div class="contact__item">
+          <div class="contact__title">Контактная почта</div>
+          <a href="#" class="contact__text">beauty@virus.com</a>
+        </div>
+        <div class="contact__item">
+          <div class="contact__title">Контактный телефон</div>
+          <a href="#" class="contact__text">+7 (46672) 241-32-42 </a>
+        </div>
+        <div class="contact__item">
+          <div class="contact__title">мы в социальных сетях</div>
+          <div class="contact__soc">
+            <a href="/" class="">
+              <img src="images/dist/whatsapp.svg" alt="">
+            </a>
+            <a href="/" class="">
+              <img src="images/dist/telegram.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="contact-form wow fadeInUp">
+      <div class="contact-form__rose">
+        <img src="images/dist/form-rose.png" alt="">
+      </div>
+  <div class="container">
+    <div class="contact-form__inner">
+      <div class="contact-form__left wow fadeIn">
+        <form class="form" id="contactForm">
+          <div class="form__title">Подпишись на рассылку и получи промокод на скидку 10% на OZON</div>
+          <div class="form__inner">
+            <div class="form__item">
+              <select name="subject" id="subject" class="form__select" required>
+                <option value="1">- По вопросам оптовых закупок</option>
+                <option value="2">- Для лейбла</option>
+                <option value="3">- Для блогеров</option>
+              </select>
+            </div>
+            <div class="form__item">
+              <input type="text" name="name" class="form__input" placeholder="Имя" required>
+            </div>
+            <div class="form__item">
+              <input type="email" name="email" class="form__input" placeholder="E-mail" required>
+            </div>
+            <div class="form__item">
+              <input type="tel" name="tel" class="form__input" placeholder="Телефон" required>
+            </div>
+            <div class="form__item">
+              <textarea name="message" id="message" class="form__textarea" placeholder="Сообщение" required></textarea>
+            </div>
+          </div>
+          <div class="form__actions" style="display: flex; flex-direction: column; align-items: center;">
+            <button class="btn form__send">Отправить</button>
+            <div id="formMessage"></div>
+          </div>
+        </form>
+        <script>
+          $(document).ready(function () {
+            $('#contactForm').on('submit', function (event) {
+              event.preventDefault(); // Отключаем стандартное поведение формы
+
+              // Собираем данные формы
+              var formData = $(this).serialize();
+
+              // Отправляем данные через AJAX
+              $.ajax({
+                url: 'send_mail2.php', // Путь к PHP-скрипту
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                  // Отображаем сообщение об успешной отправке
+                  $('#formMessage').html('<p>' + response + '</p>');
+                  // Очищаем форму после отправки
+                  $('#contactForm')[0].reset();
+                },
+                error: function (xhr, status, error) {
+                  // Обрабатываем ошибки
+                  $('#formMessage').html('<p>Произошла ошибка: ' + error + '</p>');
+                }
+              });
+            });
+          });
+        </script>
+      </div>
+      <div class="contact-form__right wow fadeInRight">
+        <img src="images/dist/form-bg.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <footer class="footer wow fadeIn">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__col footer__col--first">
+            <a href="/" class="footer__logo">
+              <img src="images/dist/logo.svg" alt="">
+            </a>
+            <div class="footer__logo-title">Официальный интернет-магазин BEAUTYVIRUS</div>
+            <div class="footer__mob">
+              <a href="tel:+74955553254" class="footer__link">+7 (495) 555 32 54</a>
+              <span class="footer__link">Новосибирская область, г. Серебряные Пруды, пер. Ломоносова, 13</span>
+              <div class="footer__socs">
+                <a href="/" class="footer__soc">
+                  <img src="images/dist/footer-whatsapp.svg" alt="">
+                </a>
+                <a href="/" class="footer__soc">
+                  <img src="images/dist/footer-telegram.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__col">
+            <div class="footer__item">
+              <div class="footer__title">КАТАЛОГ</div>
+              <div class="footer__links">
+                <a href="/" class="footer__link">Мужской парфюм</a>
+                <a href="/" class="footer__link">Женский парфюм</a>
+                <a href="/" class="footer__link">Resources</a>
+                <a href="/" class="footer__link">Детский парфюм</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__col">
+            <div class="footer__item">
+              <div class="footer__title">О НАС</div>
+              <div class="footer__links">
+                <a href="/" class="footer__link">Шоурумы</a>
+                <a href="/" class="footer__link">Аромамаркетинг</a>
+                <a href="/" class="footer__link">Корпоративные подарки</a>
+                <a href="/" class="footer__link">Оптвые закупки</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__col">
+            <div class="footer__item">
+              <div class="footer__title">ПОМОЩЬ</div>
+              <div class="footer__links">
+                <a href="/" class="footer__link">Вопрос-ответ</a>
+                <a href="/" class="footer__link">Условия доставки</a>
+                <a href="/" class="footer__link">Условия оплаты</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__col footer__col--last">
+            <div class="footer__socs">
+              <a href="/" class="footer__soc">
+                <img src="images/dist/footer-whatsapp.svg" alt="">
+              </a>
+              <a href="/" class="footer__soc">
+                <img src="images/dist/footer-telegram.svg" alt="">
+              </a>
+            </div>
+            <a href="tel:+74955553254" class="footer__link">+7 (495) 555 32 54</a>
+            <span class="footer__link">Новосибирская область, г. Серебряные Пруды, пер. Ломоносова, 13</span>
+          </div>
+        </div>
+      </div>
+    </footer>  
+  </div>
+  <script src="js/app.min.js"></script>
+
+  <link rel="stylesheet" href="css/animate.min.css">
+  <script src="js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+
+</body>
+</html>
